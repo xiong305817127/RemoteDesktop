@@ -48,7 +48,6 @@ public class RemoteServer {
 	}
 
 	public static void main(String[] args) {
-		boolean isOk = false;
 		while (true) {
 			try {
 				Thread.sleep(1000);
@@ -62,7 +61,7 @@ public class RemoteServer {
 					remoteServer.close();
 				}
 				
-				String ip = "192.168.1.142";
+				String ip = "xh.com";
 				int port = 50090;
 
 				if (args != null && args.length >= 1) {
@@ -75,8 +74,6 @@ public class RemoteServer {
 				Socket sc = new Socket(ip, port);
 				remoteServer = new RemoteServer();
 				remoteServer.setupServer(sc);
-				isOk = true;
-
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
